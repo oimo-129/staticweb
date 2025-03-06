@@ -1,0 +1,19 @@
+.fl {
+    float: left;
+}
+
+.fr {
+    float:right;
+}
+
+/* 版心,左右居中 */
+.w {
+ width:1200px;
+ margin:0 auto;
+}
+/* 快捷导航栏 */
+.shortcut {
+    height:31px;
+    background-color: #f1f1f1;
+    line-height:31px;
+}
