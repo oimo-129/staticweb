@@ -5,6 +5,9 @@
 .fr {
     float:right;
 }
+.style-red {
+    color: red;
+}
 
 /* 版心,左右居中 */
 .w {
@@ -16,4 +19,7 @@
     height:31px;
     background-color: #f1f1f1;
     line-height:31px;
+}
+.shortcut li{
+    float:left;
 }
