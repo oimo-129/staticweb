@@ -1,0 +1,10 @@
+---
+description: staticrules
+globs: 
+---
+
+# Your rule content
+
+- You can @ files here
+- You can use markdown but dont have to
+每次创建代码，都要在文件内对代码的作用进行注释  

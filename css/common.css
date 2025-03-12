@@ -23,3 +23,9 @@
 .shortcut li{
     float:left;
 }
+.spacer{
+    width:1px;
+    height:12px;
+    background-color: #666;
+    margin:10px 10px 0;/*marginde三种写法*/
+}

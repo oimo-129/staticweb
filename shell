@@ -1,0 +1,5 @@
+mv static.html demo/
+mv relative.html demo/
+mv absolute.html demo/
+mv fixed.html demo/
+mv modal.html demo/ 

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相对定位(relative)示例</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            margin: 50px;
+            position: relative; /* 为绝对定位的子元素创建定位上下文 */
+        }
+        
+        .box {
+            width: 150px;
+            height: 150px;
+            margin: 20px;
+            background-color: #f0f0f0;
+            border: 2px solid #333;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        /* 相对定位 */
+        .relative-box {
+            position: relative;
+            background-color: #d6ffd6;
+            top: 20px;
+            left: 40px;
+        }
+        
+        /* 示例2：微调文本 */
+        .text-adjust {
+            position: relative;
+            top: -5px; /* 文本上移5px */
+            color: red;
+            font-weight: bold;
+        }
+        
+        /* 示例3：为子元素提供定位上下文 */
+        .parent {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            background-color: #e0e0ff;
+            margin: 40px 0;
+        }
+        
+        .child {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            width: 100px;
+            height: 50px;
+            background-color: #ffcc00;
+            text-align: center;
+            line-height: 50px;
+        }
+        
+        /* 注释块样式 */
+        .note {
+            background-color: #ffffcc;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #ffeb3b;
+        }
+    </style>
+</head>
+<body>
+    <h1>相对定位(relative)</h1>
+    
+    <div class="note">
+        <p><strong>relative定位说明：</strong></p>
+        <ul>
+            <li>元素相对于其<strong>正常位置</strong>进行定位</li>
+            <li>可以使用top、right、bottom、left属性移动元素位置</li>
+            <li>元素仍然占据原来的空间（不脱离文档流）</li>
+            <li>常用于为绝对定位的子元素创建一个定位上下文</li>
+        </ul>
+    </div>
+    
+    <h2>示例1：元素偏移</h2>
+    <div class="container">
+        <div class="box">普通盒子</div>
+        
+        <div class="box relative-box">
+            相对定位盒子
+            <p>position: relative</p>
+            <p>top: 20px; left: 40px</p>
+        </div>
+        
+        <div class="box">普通盒子（注意间隙）</div>
+    </div>
+    
+    <h2>示例2：微调文本位置</h2>
+    <p>这里有一段文字，其中<span class="text-adjust">这部分文字</span>使用相对定位向上微调了5px。</p>
+    
+    <h2>示例3：为子元素创建定位上下文</h2>
+    <div class="parent">
+        父元素 (position: relative)
+        <div class="child">子元素 (position: absolute)</div>
+    </div>
+    
+    <div class="note">
+        <p><strong>使用场景：</strong></p>
+        <ul>
+            <li>微调元素位置，如图标、文本的细微位置调整</li>
+            <li>为绝对定位的子元素创建定位上下文</li>
+            <li>制作简单的动画效果（hover时位置变化）</li>
+            <li>堆叠元素（使用z-index）</li>
+        </ul>
+    </div>
+</body>
+</html> 

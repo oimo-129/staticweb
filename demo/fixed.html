@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>固定定位(fixed)示例</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            padding-top: 70px; /* 为固定导航腾出空间 */
+            padding-bottom: 100px; /* 为底部内容腾出空间 */
+        }
+        
+        section {
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* 固定导航栏 */
+        .fixed-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        .fixed-navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .fixed-navbar .nav-links {
+            display: flex;
+        }
+        
+        .fixed-navbar .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 5px 10px;
+        }
+        
+        .fixed-navbar .nav-links a:hover {
+            background-color: #555;
+            border-radius: 4px;
+        }
+        
+        /* 固定侧边栏 */
+        .fixed-sidebar {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 120px;
+        }
+        
+        .fixed-sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .fixed-sidebar ul li {
+            margin-bottom: 10px;
+        }
+        
+        .fixed-sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .fixed-sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+        
+        /* 固定广告 */
+        .fixed-ad {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 150px;
+            height: 100px;
+            background-color: #ffeecc;
+            border: 1px solid #ffcc66;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        /* 返回顶部按钮 */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 20px;
+            opacity: 0.8;
+        }
+        
+        .back-to-top:hover {
+            opacity: 1;
+        }
+        
+        /* 注释块样式 */
+        .note {
+            background-color: #ffffcc;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #ffeb3b;
+        }
+        
+        /* 制造滚动效果 */
+        .spacer {
+            height: 500px;
+            background-color: #f0f0f0;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <!-- 固定导航栏 -->
+    <div class="fixed-navbar">
+        <div class="logo">我的网站</div>
+        <div class="nav-links">
+            <a href="#">首页</a>
+            <a href="#">产品</a>
+            <a href="#">服务</a>
+            <a href="#">关于我们</a>
+            <a href="#">联系我们</a>
+        </div>
+    </div>
+    
+    <div class="content">
+        <h1>固定定位(fixed)</h1>
+        
+        <div class="note">
+            <p><strong>fixed定位说明：</strong></p>
+            <ul>
+                <li>元素会从正常文档流中移除（脱离文档流）</li>
+                <li>相对于<strong>浏览器窗口(viewport)</strong>进行定位</li>
+                <li>即使页面滚动，元素位置也不会改变</li>
+                <li>可以使用top、right、bottom、left属性精确定位元素</li>
+                <li>常用于需要始终可见的元素</li>
+            </ul>
+        </div>
+        
+        <h2>示例：请观察页面上的固定元素</h2>
+        
+        <section>
+            <h3>1. 固定导航栏</h3>
+            <p>导航栏固定在页面顶部，无论如何滚动都保持可见。</p>
+        </section>
+        
+        <div class="spacer">向下滚动查看更多示例</div>
+        
+        <section>
+            <h3>2. 固定侧边栏</h3>
+            <p>侧边栏固定在页面右侧，用于快速导航。</p>
+        </section>
+        
+        <div class="spacer">继续滚动</div>
+        
+        <section>
+            <h3>3. 固定广告</h3>
+            <p>广告固定在页面左下角，无论如何滚动都保持可见。</p>
+        </section>
+        
+        <div class="spacer">最后一个示例</div>
+        
+        <section>
+            <h3>4. 返回顶部按钮</h3>
+            <p>返回顶部按钮固定在页面右下角，方便用户快速回到页面顶部。</p>
+        </section>
+        
+        <div class="note">
+            <p><strong>使用场景：</strong></p>
+            <ul>
+                <li>固定导航栏/头部</li>
+                <li>固定侧边栏</li>
+                <li>固定页脚</li>
+                <li>返回顶部按钮</li>
+                <li>悬浮广告/通知</li>
+                <li>聊天窗口</li>
+                <li>Cookie同意提示条</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- 固定侧边栏 -->
+    <div class="fixed-sidebar">
+        <h4>快速导航</h4>
+        <ul>
+            <li><a href="#">导航栏</a></li>
+            <li><a href="#">侧边栏</a></li>
+            <li><a href="#">广告</a></li>
+            <li><a href="#">返回顶部</a></li>
+        </ul>
+    </div>
+    
+    <!-- 固定广告 -->
+    <div class="fixed-ad">
+        <span class="close-btn">×</span>
+        <h4>特别优惠!</h4>
+        <p>限时7折优惠，不要错过！</p>
+    </div>
+    
+    <!-- 返回顶部按钮 -->
+    <a href="#" class="back-to-top">↑</a>
+    
+    <script>
+        // 关闭广告功能
+        document.querySelector('.close-btn').addEventListener('click', function() {
+            document.querySelector('.fixed-ad').style.display = 'none';
+        });
+        
+        // 返回顶部功能
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+    </script>
+</body>
+</html> 

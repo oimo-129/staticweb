@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>静态定位(static)示例</title>
+    <style>
+        /* 基本样式 */
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .box {
+            width: 150px;
+            height: 150px;
+            margin: 20px;
+            background-color: #f0f0f0;
+            border: 2px solid #333;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        /* 静态定位 - 默认值 */
+        .static-box {
+            position: static; /* 默认值，可以省略不写 */
+            background-color: #ffd6d6;
+        }
+        
+        /* 注释块样式 */
+        .note {
+            background-color: #ffffcc;
+            padding: 15px;
+            margin: 20px 0;
+            border-left: 4px solid #ffeb3b;
+        }
+    </style>
+</head>
+<body>
+    <h1>静态定位(static)</h1>
+    
+    <div class="note">
+        <p><strong>static定位说明：</strong></p>
+        <ul>
+            <li>这是元素的<strong>默认</strong>定位方式</li>
+            <li>元素按照正常文档流进行布局</li>
+            <li>top、right、bottom、left和z-index属性<strong>不起作用</strong></li>
+            <li>每个块级元素占据其自己的空间，按顺序排列</li>
+        </ul>
+    </div>
+    
+    <div class="box">普通盒子</div>
+    
+    <div class="box static-box">
+        静态定位盒子
+        <p>position: static</p>
+    </div>
+    
+    <div class="box">普通盒子</div>
+    
+    <div class="note">
+        <p><strong>使用场景：</strong></p>
+        <ul>
+            <li>网页的基本布局，大多数元素默认都使用静态定位</li>
+            <li>不需要特殊定位的内容区域</li>
+            <li>段落文字、标题、列表等常规元素</li>
+        </ul>
+    </div>
+</body>
+</html> 
