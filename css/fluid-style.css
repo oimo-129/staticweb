@@ -1,0 +1,282 @@
+/* 流式布局样式 */
+
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+    background-color: #f5f5f5;
+    line-height: 1.5;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+img {
+    vertical-align: middle;
+    width: 100%; /* 流式图片的关键 */
+}
+
+input {
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+/* 清除浮动 */
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* 顶部搜索栏 */
+.search-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* 流式布局核心：宽度100% */
+    height: 44px;
+    background-color: #ff6b81;
+    z-index: 999;
+}
+
+.search-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 10px;
+}
+
+.location-btn, .user-btn {
+    width: 15%; /* 流式布局核心：使用百分比 */
+    color: #fff;
+    text-align: center;
+}
+
+.search-box {
+    flex: 1; /* 流式布局核心：弹性布局 */
+    height: 30px;
+    margin: 0 10px;
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.search-box input {
+    flex: 1;
+    height: 100%;
+    font-size: 12px;
+}
+
+.iconfont {
+    margin-right: 3px;
+}
+
+/* 轮播图区域 */
+.banner {
+    width: 100%; /* 流式布局核心：宽度100% */
+    margin-top: 44px;
+}
+
+/* 导航菜单 */
+.nav-menu {
+    width: 100%;
+    background-color: #fff;
+    padding: 15px 0;
+}
+
+.nav-menu li {
+    float: left;
+    width: 25%; /* 流式布局核心：25%宽度，一行4个 */
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.nav-menu li img {
+    width: 60%; /* 流式布局核心：图片宽度相对于父容器 */
+    margin: 0 auto;
+    display: block;
+}
+
+.nav-menu li span {
+    font-size: 12px;
+    color: #666;
+    display: block;
+    margin-top: 5px;
+}
+
+/* 商品推荐区 */
+.product-recommend {
+    margin-top: 10px;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.section-header {
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    border-bottom: 1px solid #eee;
+}
+
+.section-header h3 {
+    font-size: 16px;
+    color: #333;
+    font-weight: normal;
+}
+
+.more {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 12px;
+    color: #999;
+}
+
+.product-item {
+    width: 50%; /* 流式布局核心：50%宽度，一行2个 */
+    float: left;
+    padding: 10px;
+}
+
+.product-info {
+    padding: 5px 0;
+}
+
+.title {
+    font-size: 14px;
+    color: #333;
+    font-weight: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.desc {
+    font-size: 12px;
+    color: #999;
+    margin: 5px 0;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.price {
+    color: #ff6b81;
+    font-size: 16px;
+}
+
+.sold {
+    font-size: 12px;
+    color: #999;
+}
+
+/* 猜你喜欢区 */
+.product-guess {
+    margin-top: 10px;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 60px; /* 为底部导航留出空间 */
+}
+
+.guess-item {
+    width: 33.33%; /* 流式布局核心：三等分，一行3个 */
+    float: left;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.guess-title {
+    font-size: 12px;
+    color: #333;
+    margin: 5px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: normal;
+}
+
+.guess-price {
+    color: #ff6b81;
+    font-size: 14px;
+}
+
+/* 底部导航 */
+.nav-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* 流式布局核心：宽度100% */
+    height: 50px;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    z-index: 999;
+}
+
+.nav-footer li {
+    float: left;
+    width: 25%; /* 流式布局核心：均分宽度 */
+    height: 100%;
+    text-align: center;
+    padding-top: 7px;
+}
+
+.nav-footer span {
+    display: block;
+    font-size: 12px;
+    color: #999;
+}
+
+.nav-footer .active span,
+.nav-footer .active i {
+    color: #ff6b81;
+}
+
+/* 媒体查询 - 适配不同屏幕尺寸 */
+@media screen and (max-width: 320px) {
+    .nav-menu li {
+        width: 25%; /* 小屏幕仍然4列，但尺寸不同 */
+    }
+    
+    .product-item {
+        width: 100%; /* 在小屏幕上改为一列显示 */
+    }
+    
+    .guess-item {
+        width: 50%; /* 在小屏幕上改为两列显示 */
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .nav-menu li {
+        width: 20%; /* 大屏幕改为5列 */
+    }
+    
+    .product-item {
+        width: 33.33%; /* 在大屏幕上改为三列显示 */
+    }
+    
+    .guess-item {
+        width: 25%; /* 在大屏幕上改为四列显示 */
+    }
+} 

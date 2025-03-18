@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>流式布局案例 - 移动电商网站</title>
+    <link rel="stylesheet" href="css/fluid-style.css">
+    <!-- 引入字体图标 -->
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_2184864_ada3lkl4wuh.css">
+</head>
+<body>
+    <!-- 顶部搜索区域 -->
+    <header class="search-bar">
+        <div class="search-wrap">
+            <div class="location-btn">
+                <i class="iconfont icon-location"></i>
+                <span>北京</span>
+            </div>
+            
+            <div class="search-box">
+                <i class="iconfont icon-search"></i>
+                <input type="text" placeholder="搜索商品">
+            </div>
+            
+            <div class="user-btn">
+                <i class="iconfont icon-user"></i>
+                <span>我的</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 轮播图区域 -->
+    <div class="banner">
+        <img src="https://via.placeholder.com/750x350/ff6b81/ffffff?text=流式布局轮播图" alt="促销活动">
+    </div>
+
+    <!-- 导航菜单 -->
+    <nav class="nav-menu">
+        <ul class="clearfix">
+            <li>
+                <a href="#">
+                    <img src="https://via.placeholder.com/80x80/3498db/ffffff?text=1" alt="分类1">
+                    <span>分类1</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="https://via.placeholder.com/80x80/e74c3c/ffffff?text=2" alt="分类2">
+                    <span>分类2</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="https://via.placeholder.com/80x80/2ecc71/ffffff?text=3" alt="分类3">
+                    <span>分类3</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="https://via.placeholder.com/80x80/f39c12/ffffff?text=4" alt="分类4">
+                    <span>分类4</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="https://via.placeholder.com/80x80/9b59b6/ffffff?text=5" alt="分类5">
+                    <span>分类5</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="https://via.placeholder.com/80x80/1abc9c/ffffff?text=6" alt="分类6">
+                    <span>分类6</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="https://via.placeholder.com/80x80/e67e22/ffffff?text=7" alt="分类7">
+                    <span>分类7</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="https://via.placeholder.com/80x80/34495e/ffffff?text=8" alt="分类8">
+                    <span>分类8</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 商品推荐区 -->
+    <section class="product-recommend">
+        <header class="section-header">
+            <h3>热门推荐</h3>
+            <a href="#" class="more">更多</a>
+        </header>
+        
+        <div class="product-list clearfix">
+            <div class="product-item">
+                <div class="product-img">
+                    <img src="https://via.placeholder.com/200x200/ff6b81/ffffff?text=商品1" alt="商品1">
+                </div>
+                <div class="product-info">
+                    <h4 class="title">流式布局商品展示-商品名称展示</h4>
+                    <p class="desc">商品简短描述信息</p>
+                    <div class="price-row">
+                        <span class="price">¥299</span>
+                        <span class="sold">已售1.2万件</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-item">
+                <div class="product-img">
+                    <img src="https://via.placeholder.com/200x200/3498db/ffffff?text=商品2" alt="商品2">
+                </div>
+                <div class="product-info">
+                    <h4 class="title">流式布局商品展示-商品名称展示</h4>
+                    <p class="desc">商品简短描述信息</p>
+                    <div class="price-row">
+                        <span class="price">¥199</span>
+                        <span class="sold">已售8562件</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-item">
+                <div class="product-img">
+                    <img src="https://via.placeholder.com/200x200/2ecc71/ffffff?text=商品3" alt="商品3">
+                </div>
+                <div class="product-info">
+                    <h4 class="title">流式布局商品展示-商品名称展示</h4>
+                    <p class="desc">商品简短描述信息</p>
+                    <div class="price-row">
+                        <span class="price">¥159</span>
+                        <span class="sold">已售6723件</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-item">
+                <div class="product-img">
+                    <img src="https://via.placeholder.com/200x200/e74c3c/ffffff?text=商品4" alt="商品4">
+                </div>
+                <div class="product-info">
+                    <h4 class="title">流式布局商品展示-商品名称展示</h4>
+                    <p class="desc">商品简短描述信息</p>
+                    <div class="price-row">
+                        <span class="price">¥329</span>
+                        <span class="sold">已售4521件</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 猜你喜欢区 -->
+    <section class="product-guess">
+        <header class="section-header">
+            <h3>猜你喜欢</h3>
+        </header>
+        
+        <div class="guess-list clearfix">
+            <div class="guess-item">
+                <div class="guess-img">
+                    <img src="https://via.placeholder.com/150x150/f39c12/ffffff?text=推荐1" alt="推荐商品1">
+                </div>
+                <h5 class="guess-title">流式布局推荐商品1</h5>
+                <p class="guess-price">¥99</p>
+            </div>
+            
+            <div class="guess-item">
+                <div class="guess-img">
+                    <img src="https://via.placeholder.com/150x150/9b59b6/ffffff?text=推荐2" alt="推荐商品2">
+                </div>
+                <h5 class="guess-title">流式布局推荐商品2</h5>
+                <p class="guess-price">¥129</p>
+            </div>
+            
+            <div class="guess-item">
+                <div class="guess-img">
+                    <img src="https://via.placeholder.com/150x150/1abc9c/ffffff?text=推荐3" alt="推荐商品3">
+                </div>
+                <h5 class="guess-title">流式布局推荐商品3</h5>
+                <p class="guess-price">¥159</p>
+            </div>
+            
+            <div class="guess-item">
+                <div class="guess-img">
+                    <img src="https://via.placeholder.com/150x150/e67e22/ffffff?text=推荐4" alt="推荐商品4">
+                </div>
+                <h5 class="guess-title">流式布局推荐商品4</h5>
+                <p class="guess-price">¥88</p>
+            </div>
+            
+            <div class="guess-item">
+                <div class="guess-img">
+                    <img src="https://via.placeholder.com/150x150/34495e/ffffff?text=推荐5" alt="推荐商品5">
+                </div>
+                <h5 class="guess-title">流式布局推荐商品5</h5>
+                <p class="guess-price">¥199</p>
+            </div>
+            
+            <div class="guess-item">
+                <div class="guess-img">
+                    <img src="https://via.placeholder.com/150x150/16a085/ffffff?text=推荐6" alt="推荐商品6">
+                </div>
+                <h5 class="guess-title">流式布局推荐商品6</h5>
+                <p class="guess-price">¥249</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部导航 -->
+    <footer class="nav-footer">
+        <ul class="clearfix">
+            <li class="active">
+                <a href="#">
+                    <i class="iconfont icon-home"></i>
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="iconfont icon-category"></i>
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="iconfont icon-cart"></i>
+                    <span>购物车</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="iconfont icon-user"></i>
+                    <span>我的</span>
+                </a>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html> 
