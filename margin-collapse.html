@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外边距塌陷问题演示</title>
+    <style>
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            color: #333;
+            line-height: 1.5;
+        }
+        
+        .container {
+            width: 600px;
+            margin: 0 auto;
+        }
+        
+        .box {
+            width: 100%;
+            height: 100px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+        
+        /* 第一种情况：相邻元素之间的外边距塌陷 */
+        .example1 .box1 {
+            margin-bottom: 50px;
+            background-color: #ffecec;
+        }
+        
+        .example1 .box2 {
+            margin-top: 30px;
+            background-color: #ecffec;
+        }
+        
+        /* 第二种情况：父子元素之间的外边距塌陷 */
+        .example2 {
+            background-color: #eceeff;
+            /* 注意这里没有设置padding和border */
+        }
+        
+        .example2 .child {
+            margin-top: 50px;
+            background-color: #ffffec;
+        }
+        
+        /* 解决方案示例 */
+        .solution1 .box1 {
+            margin-bottom: 50px;
+            background-color: #ffecec;
+        }
+        
+        .solution1 .box2 {
+            margin-top: 30px;
+            background-color: #ecffec;
+        }
+        
+        /* 使用padding代替margin */
+        .solution1 .spacer {
+            height: 80px; /* 50px + 30px */
+        }
+        
+        /* 解决父子边距塌陷问题 */
+        .solution2 {
+            background-color: #eceeff;
+            /* 以下四种方法任选其一即可 */
+            overflow: hidden; /* 方法1：设置overflow */
+            /* border-top: 1px solid transparent; */ /* 方法2：设置border */
+            /* padding-top: 1px; */ /* 方法3：设置padding */
+            /* display: flow-root; */ /* 方法4：使用flow-root (现代浏览器) */
+        }
+        
+        .solution2 .child {
+            margin-top: 50px;
+            background-color: #ffffec;
+        }
+        
+        h2, h3 {
+            margin-top: 30px;
+        }
+        
+        .note {
+            background-color: #fffacd;
+            padding: 10px;
+            border-left: 4px solid #ffd700;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS外边距塌陷问题演示</h1>
+        
+        <div class="note">
+            <p><strong>外边距塌陷</strong>是指当两个垂直方向相邻的盒子同时设置了外边距时，它们的外边距会合并为一个，而不是相加。合并后的外边距等于两个外边距中的较大值。</p>
+        </div>
+        
+        <h2>一、相邻元素之间的外边距塌陷</h2>
+        <p>这个例子中，上面的盒子设置了margin-bottom: 50px，下面的盒子设置了margin-top: 30px，但它们之间的实际间距是50px(最大值)，而不是80px(两者之和)。</p>
+        
+        <div class="example1">
+            <div class="box box1">上盒子 (margin-bottom: 50px)</div>
+            <div class="box box2">下盒子 (margin-top: 30px)</div>
+        </div>
+        
+        <h2>二、父子元素之间的外边距塌陷</h2>
+        <p>在这个例子中，子元素的margin-top: 50px会"穿透"父元素，导致整个父容器一起向下移动。</p>
+        
+        <div class="example2">
+            <div class="child box">子元素 (margin-top: 50px)</div>
+        </div>
+        
+        <h2>解决方案</h2>
+        
+        <h3>1. 解决相邻元素间外边距塌陷</h3>
+        <ul>
+            <li>使用padding代替margin</li>
+            <li>使用清除浮动或flexbox布局</li>
+            <li>用一个空div隔开，给它设置高度</li>
+        </ul>
+        
+        <div class="solution1">
+            <div class="box box1">上盒子 (margin-bottom: 50px)</div>
+            <div class="spacer"></div>
+            <div class="box box2">下盒子 (margin-top: 30px)</div>
+        </div>
+        
+        <h3>2. 解决父子元素外边距塌陷</h3>
+        <p>为父元素添加以下CSS属性之一：</p>
+        <ul>
+            <li>overflow: hidden/auto</li>
+            <li>border-top: 1px solid transparent</li>
+            <li>padding-top: 1px</li>
+            <li>display: flow-root (现代浏览器)</li>
+        </ul>
+        
+        <div class="solution2">
+            <div class="child box">子元素 (margin-top: 50px)</div>
+        </div>
+        
+        <div class="note">
+            <p><strong>注意：</strong>外边距塌陷只发生在垂直方向(margin-top和margin-bottom)，水平方向的外边距不会发生塌陷。</p>
+        </div>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition</title>
+
+    <style>
+        div {
+            width: 200px;
+            height: 50px;
+            position: relative;
+            border: 1px solid green;
+        }
+        div::after{
+            content: "";
+            position:absolute;
+            top:7px;
+            right:11px;
+            width: 10px;
+            height: 10px;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            transform: rotate(45deg);
+            transition: transform 0.3s;
+
+        }
+        div:hover::after{
+            transform: rotate(180deg);
+        }
+    </style>
+   
+</head>
+<body>
+    <div>
+        
+   <div>同类型测试</div>
+   <div>同类型测试</div>
+   <div>同类型测试</div>
+   <div>同类型测试</div>
+   <div>同类型测试</div>
+    </div>
+</body>
+</html>
