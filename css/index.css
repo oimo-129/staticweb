@@ -1,3 +1,4 @@
+/*这个文件里面放的是 首页的样式*/
 .main {
 	width: 980px;
 	height: 455px;
@@ -10,8 +11,6 @@
 	height: 455px;
 	background-color: purple;
 }
-
-
 .arrow-l,
 .arrow-r {
 	position: absolute;
@@ -29,8 +28,6 @@
 .arrow-r {
 	right: 0;
 }
-
-
 .circle {
 	position: absolute;
 	bottom: 10px;
@@ -48,7 +45,10 @@
 	cursor: pointer;
 
 }
-
+.current {
+	background-color: #fff;
+	box-shadow: 
+}
 .newsflash {
 	width: 250px;
 	height: 455px;
@@ -77,8 +77,6 @@
 .news-bd li {
 	height: 23px;
 }
-
-
 .lifeservice {
 	overflow: hidden;
 	height: 208px;
@@ -105,23 +103,21 @@
 .lifeservice li p {
 	text-align: center;
 }
-
 .hot {
 	position: absolute;
 	right: 0;
 	top: 0;
 	width: 12px;
 	height: 15px;
-	background: url(../imgs/clock.png) no-repeat;
+	background: url(../img/jian.jpg) no-repeat;
 }
 .service_ico {
 	display: block;
 	width: 24px;
 	height: 24px;
-	background: url(../imgs/icons.png) no-repeat;
+	background: url(../img/icons.png) no-repeat;
 	margin: 10px auto;
 }
-/* 两者交替使用 */
 .service_ico_huafei {
 	background-position: -17px -16px;
 }
@@ -129,20 +125,15 @@
 	width: 26px;
 	background-position: -78px -16px;
 }
-
 .bargain {
 	height: 75px;
 	margin-top: 5px;
 }
-
-
-/* recommend推荐模块 */
+/*推荐模块*/
 .recommend {
 	height: 163px;
-	background-color: pink;
 	margin-top: 10px;
 }
-
 .recom-hd {
 	width: 200px;
 	height: 163px;
@@ -172,3 +163,98 @@
 .recom-bd .last {
 	border-right: 0;
 }
+/*floor 楼层区*/
+.box-hd {
+	height: 30px;
+	border-bottom: 2px solid #c81623;
+	margin-top: 25px;
+}
+.box-hd h3 {
+	float: left;
+	font-size: 18px;
+	color: #c81623;
+}
+.tab-list {
+	float: right;
+	line-height: 30px;
+}
+.tab-list li {
+	float: left;
+}
+.tab-list li a {
+	margin: 0 15px;
+}
+.box-bd {
+	height: 360px;
+}
+.w209 {
+	width: 209px;
+	background-color: #f9f9f9;
+}
+.w329 {
+	width: 329px;
+}
+.w219 {
+	width: 219px;
+	border-right: 1px solid #ccc;
+}
+.w220 {
+	width: 220px;
+	border-right: 1px solid #ccc;	
+}
+.tab-con li {
+	float: left;
+	height: 360px;
+}
+.tab-con-item {
+	border-bottom: 1px solid #ccc;
+}
+.tab-con-list {
+	overflow: hidden;
+	margin-bottom: 15px;
+}
+.tab-con-list li {
+	width: 86px;
+	height: 32px;
+	line-height: 32px;
+	border-bottom: 1px solid #ccc;
+	margin-left: 10px;
+	text-align: center;
+}
+.box-bd li {
+	overflow: hidden;
+}
+.box-bd img {
+	/*过渡写到本身上， 谁做动画，给谁加*/
+	transition: all .2s;
+}
+/*我们鼠标经过图片 往右走 8px*/
+.box-bd img:hover {
+	margin-left: 8px;
+}
+/*电梯导航*/
+.fixedtool {
+	/* 固定电梯 */
+	position: fixed;
+	top: 100px;
+	left: 50%;
+	margin-left: -676px;
+	/* 这边有个算法的计算 */
+	width: 66px;
+	background-color: #fff;
+}
+.fixedtool li {
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	font-size: 12px;
+	border-bottom: 1px solid #ccc;
+	cursor: pointer;
+}
+.fixedtool .current {
+	background-color: #c81623;
+	color: #fff;
+}
+
+
+
