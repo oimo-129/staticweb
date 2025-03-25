@@ -209,6 +209,7 @@ absolute（绝对定位）
 /*鼠标经过li 里面的 a变颜色*/
 .menu_item:hover a {
 	color: #c81623;
+	margin-left: 2px;
 }
 
 .menu_item {
@@ -216,6 +217,7 @@ absolute（绝对定位）
 	line-height: 31px;
 	margin-left: 1px;
 	padding: 0 10px;
+	transition: all 0.2s;
 }
 .menu_item a {
 	font-size: 14px;
